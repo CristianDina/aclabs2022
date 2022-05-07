@@ -1,17 +1,17 @@
 package com.aclabs.aclabs2022.controllers;
 
 import com.aclabs.aclabs2022.model.Student;
-import com.aclabs.aclabs2022.services.HomeService;
+import com.aclabs.aclabs2022.services.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-public class HomeController {
+public class StudentController {
 
     @Autowired
-    HomeService homeService;
+    StudentService homeService;
 
     @GetMapping("/getAllStudents")
     public List<Student> getAllStudents(){

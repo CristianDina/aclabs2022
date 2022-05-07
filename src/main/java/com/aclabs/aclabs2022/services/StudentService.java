@@ -1,16 +1,14 @@
 package com.aclabs.aclabs2022.services;
 
 import com.aclabs.aclabs2022.model.Student;
-import com.aclabs.aclabs2022.repositories.HomeRepository;
 import com.aclabs.aclabs2022.repositories.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Set;
 
 @Service
-public class HomeService {
+public class StudentService {
 
     @Autowired
     StudentRepository studentRepository;
