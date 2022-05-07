@@ -1,4 +1,4 @@
-package test.java.com.aclabs.aclabs2022;
+package com.aclabs.aclabs2022;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
