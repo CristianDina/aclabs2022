@@ -1,26 +1,33 @@
 package com.aclabs.aclabs2022.services;
 
+import com.aclabs.aclabs2022.model.Student;
 import com.aclabs.aclabs2022.repositories.HomeRepository;
+import com.aclabs.aclabs2022.repositories.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Set;
 
 @Service
 public class HomeService {
 
     @Autowired
-    HomeRepository homeRepository;
+    StudentRepository studentRepository;
 
-    public String getFirstString(){
-       return homeRepository.getFirstString().toLowerCase();
+    public List<Student> getAllStudents() {
+        return  studentRepository.getAllStudents();
     }
 
-    public List<String> getAllStrings() {
-        return  homeRepository.getAllStrings();
+    public void addStudent(Student student) {
+        studentRepository.save(student);
     }
 
-    public void addString(String string) {
-        homeRepository.addString(string);
+    public void updateStudent(Student updatedStudent) {
+        studentRepository.save(updatedStudent);
+    }
+
+    public void deleteStudent(String id) {
+        studentRepository.deleteById(id);
     }
 }

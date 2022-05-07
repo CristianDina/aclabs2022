@@ -1,29 +1,34 @@
 package com.aclabs.aclabs2022.repositories;
 
 
+import com.aclabs.aclabs2022.model.Student;
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 @Repository
 public class HomeRepository {
 
-    List<String> list = new ArrayList<>();
+    Set<Student> set = new HashSet<>();
 
-    public HomeRepository(){
-        list.add("Hello World!");
+    public Set<Student> getAllStudents() {
+        return set;
     }
 
-    public String getFirstString(){
-        return list.get(0);
+    public void addStudent(Student student) {
+        set.add(student);
     }
 
-    public List<String> getAllStrings() {
-        return list;
+    public void updateStudent(String id, Student updatedStudent) {
+        deleteStudent(id);
+        set.add(updatedStudent);
     }
 
-    public void addString(String string) {
-        list.add(string);
+    public void deleteStudent(String id) {
+        Student student = null;
+        for(Student s: set)
+            if(s.getId().equals(id))
+                student = s;
+        set.remove(student);
     }
 }
