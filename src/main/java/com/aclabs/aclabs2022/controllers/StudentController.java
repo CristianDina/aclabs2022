@@ -19,12 +19,12 @@ public class StudentController {
     }
 
     @PostMapping("/addStudent")
-    public void addString(@RequestBody Student student){
+    public void addStudent(@RequestBody Student student){
         homeService.addStudent(student);
     }
 
     @PutMapping("/updateStudent")
-    public void updateString(@RequestBody Student updatedStudent){
+    public void updateStudent(@RequestBody Student updatedStudent){
         homeService.updateStudent(updatedStudent);
     }
 
