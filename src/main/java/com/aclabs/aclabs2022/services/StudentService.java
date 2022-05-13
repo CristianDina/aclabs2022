@@ -1,5 +1,6 @@
 package com.aclabs.aclabs2022.services;
 
+import com.aclabs.aclabs2022.exceptions.StudentNotFoundException;
 import com.aclabs.aclabs2022.model.Student;
 import com.aclabs.aclabs2022.repositories.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,5 +28,11 @@ public class StudentService {
 
     public void deleteStudent(String id) {
         studentRepository.deleteById(id);
+    }
+
+    public void studentExists(String id){
+        if(!studentRepository.existsById(id)){
+            throw new StudentNotFoundException("Exception: Student was not found!");
+        }
     }
 }
